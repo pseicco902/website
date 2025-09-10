@@ -33,7 +33,7 @@ gulp.task('compileSass', function() {
     return gulp.src([
         "dev/sass/**/*.scss"
     ], { allowEmpty: true })
-    .pipe(sass().on('error', function(err){
+    .pipe(sass({ quietDeps: true }).on('error', function(err){
         gutil.log(gutil.colors.red('[Error]'), err.toString());
         this.emit('end');
     }))
@@ -45,6 +45,7 @@ gulp.task('compileSass', function() {
 gulp.task("minifyCss", gulp.series("compileSass", function() {
     return gulp.src([
         "node_modules/jquery-ui-dist/jquery-ui.css",
+        "node_modules/font-awesome/css/font-awesome.css",
         "dev/css/**/*.css"
     ], { allowEmpty: true })
     .pipe(concat('all.css'))
@@ -84,4 +85,3 @@ gulp.task("build", gulp.series('compileSass', 'minifyCss', 'scripts', 'views', '
 gulp.task("default", function() {
     gulp.start('build');
 });
-
