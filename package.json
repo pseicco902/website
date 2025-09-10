@@ -12,10 +12,11 @@
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.2",
+    "sass": "^1.77.0"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
